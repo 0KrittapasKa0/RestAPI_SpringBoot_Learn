@@ -1,8 +1,26 @@
 package com.kk.RestAPI_Learning.entity;
 
+import jakarta.annotation.Generated;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
 
     public Integer getId() {
@@ -31,7 +49,7 @@ public class User {
 
     public User() {
     }
-    
+
     public User(Integer id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
